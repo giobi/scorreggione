@@ -92,6 +92,71 @@
             /* Mais Chiaro */
         }
     </style>
+    <script>
+        function calcolaRisultato() {
+            let punteggio = 0;
+            const form = document.getElementById('quizForm');
+            const risultatoDiv = document.getElementById('risultato');
+
+            if (!form || !risultatoDiv) {
+                console.error("Elementi del form o del risultato non trovati nel DOM.");
+                if (risultatoDiv) {
+                    risultatoDiv.innerHTML = "Errore: Elementi del quiz non caricati correttamente.";
+                    risultatoDiv.className = 'mt-4 alert alert-danger';
+                }
+                return;
+            }
+
+            const q1_element = form.elements['q1'];
+            const q2_element = form.elements['q2'];
+            const q3_element = form.elements['q3'];
+
+            if (!q1_element || !q2_element || !q3_element) {
+                risultatoDiv.innerHTML = "Errore interno: opzioni delle domande non trovate.";
+                risultatoDiv.className = 'mt-4 alert alert-danger';
+                console.error("Uno o più elementi delle domande (q1, q2, q3) non trovati nel form.");
+                return;
+            }
+
+            const q1 = q1_element.value;
+            const q2 = q2_element.value;
+            const q3 = q3_element.value;
+
+            if (!q1 || !q2 || !q3) {
+                risultatoDiv.innerHTML = "Rispondi a tutte le domande, perbacco!";
+                risultatoDiv.className = 'mt-4 alert alert-warning';
+                return;
+            }
+
+            // Assegnazione punteggi "scorreggione"
+            if (q1 === 'a') punteggio += 2;
+            if (q1 === 'c') punteggio += 1;
+
+            if (q2 === 'a') punteggio += 2;
+            if (q2 === 'c') punteggio += 1;
+
+            if (q3 === 'a') punteggio += 2;
+            if (q3 === 'c') punteggio += 1;
+
+            let messaggio = "";
+            let classeBaseRisultato = "mt-4 alert"; // Tutti i risultati avranno queste classi base
+            let classeSpecificaColore = "";
+
+            if (punteggio >= 5) {
+                messaggio = "Congratulazioni! Sei ufficialmente un Vecchio Scorreggione DOC! Il bastone e la dentiera ti aspettano. E non dimenticare la briscola delle 15:00!";
+                classeSpecificaColore = "scorreggione";
+            } else if (punteggio >= 2) {
+                messaggio = "Hmm, ci sei quasi... Qualche sintomo da scorreggione c\'è, ma hai ancora un po\' di gioventù dentro! Forse sei solo un \'brontolone in addestramento\'.";
+                classeSpecificaColore = "forse-scorreggione";
+            } else {
+                messaggio = "Ma che scorreggione e scorreggione! Sei più fresco di una rosa appena sbocciata! Continua così e tieni lontano il bastone della vecchiaia!";
+                classeSpecificaColore = "non-scorreggione";
+            }
+
+            risultatoDiv.innerHTML = `<strong>Verdetto:</strong> ${messaggio}`;
+            risultatoDiv.className = `${classeBaseRisultato} ${classeSpecificaColore}`;
+        }
+    </script>
 </head>
 
 <body>
@@ -174,50 +239,7 @@
 
     <!-- Bootstrap JS Bundle (include Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        function calcolaRisultato() {
-            let punteggio = 0;
-            const form = document.getElementById('quizForm');
-            const risultatoDiv = document.getElementById('risultato');
-
-            const q1 = form.elements['q1'].value;
-            const q2 = form.elements['q2'].value;
-            const q3 = form.elements['q3'].value;
-
-            if (!q1 || !q2 || !q3) {
-                risultatoDiv.innerHTML = "Rispondi a tutte le domande, perbacco!";
-                risultatoDiv.className = 'alert alert-warning';
-                return;
-            }
-
-            // Assegnazione punteggi "scorreggione"
-            if (q1 === 'a') punteggio += 2;
-            if (q1 === 'c') punteggio += 1;
-
-            if (q2 === 'a') punteggio += 2;
-            if (q2 === 'c') punteggio += 1;
-
-            if (q3 === 'a') punteggio += 2;
-            if (q3 === 'c') punteggio += 1;
-
-            let messaggio = "";
-            let classeRisultato = "";
-
-            if (punteggio >= 5) {
-                messaggio = "Congratulazioni! Sei ufficialmente un Vecchio Scorreggione DOC! Il bastone e la dentiera ti aspettano. E non dimenticare la briscola delle 15:00!";
-                classeRisultato = "scorreggione";
-            } else if (punteggio >= 2) {
-                messaggio = "Hmm, ci sei quasi... Qualche sintomo da scorreggione c'è, ma hai ancora un po' di gioventù dentro! Forse sei solo un 'brontolone in addestramento'.";
-                classeRisultato = "forse-scorreggione";
-            } else {
-                messaggio = "Ma che scorreggione e scorreggione! Sei più fresco di una rosa appena sbocciata! Continua così e tieni lontano il bastone della vecchiaia!";
-                classeRisultato = "non-scorreggione";
-            }
-
-            risultatoDiv.innerHTML = '<strong>Verdetto:</strong> ' + messaggio;
-            risultatoDiv.className = classeRisultato; // Rimuove classi precedenti e aggiunge la nuova
-        }
-    </script>
+    <!-- Il blocco script con calcolaRisultato() è stato spostato nell'head -->
 </body>
 
 </html>

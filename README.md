@@ -23,3 +23,10 @@ Questo è un semplice test divertente creato in HTML, Bootstrap 5 e JavaScript p
 
 ---
 *Creato il 9 giugno 2025*
+
+Creato con Gemini 2.5 pro
+Prompt originale (con errori):
+
+```
+crea un test molto divertente con 3 domande a scelta singola per capire se una persona è un vecchio scorreggione. usa bootstrap5 con color isgargianti. cerca di tenere tutto nella stessa pagine e usa i cdn
+```
