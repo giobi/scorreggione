@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test: Sei un Vecchio Scorreggione?</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #FFD700;
+            /* Giallo Oro Sgargiante */
+            color: #8A2BE2;
+            /* Viola Bluastro */
+            padding-top: 20px;
+        }
+
+        .container {
+            background-color: #FF69B4;
+            /* Rosa Caldo Sgargiante */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #00FFFF;
+            /* Ciano Aqua */
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px #FF00FF;
+            /* Magenta per ombra */
+        }
+
+        .question-card {
+            background-color: #7FFF00;
+            /* Verde Certosa Sgargiante */
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 3px dashed #FF4500;
+            /* Rosso Arancio */
+        }
+
+        .form-check-label {
+            color: #4B0082;
+            /* Indaco Scuro */
+        }
+
+        .btn-submit {
+            background-color: #FF1493;
+            /* Rosa Profondo */
+            border-color: #FF1493;
+            color: #FFFF00;
+            /* Giallo per testo bottone */
+            font-weight: bold;
+        }
+
+        .btn-submit:hover {
+            background-color: #C71585;
+            /* Viola Rosso Medio */
+            border-color: #C71585;
+        }
+
+        #risultato {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        .scorreggione {
+            background-color: #FF4500;
+            /* Rosso Arancio */
+            color: #FFFFE0;
+            /* Giallo Chiarissimo */
+        }
+
+        .non-scorreggione {
+            background-color: #32CD32;
+            /* Verde Lime */
+            color: #F0FFF0;
+            /* Melata */
+        }
+
+        .forse-scorreggione {
+            background-color: #FFA500;
+            /* Arancione */
+            color: #FFF8DC;
+            /* Mais Chiaro */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Sei un Vecchio Scorreggione? Scoprilo!</h1>
+
+        <form id="quizForm">
+            <div class="question-card">
+                <h5>Domanda 1: Quando senti un giovane lamentarsi della musica "di oggi", cosa pensi?</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1a1" value="a">
+                    <label class="form-check-label" for="q1a1">
+                        "Eh, ai miei tempi sì che c'era la vera musica!"
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1a2" value="b">
+                    <label class="form-check-label" for="q1a2">
+                        "Interessante, fammi sentire cosa ascoltano."
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1a3" value="c">
+                    <label class="form-check-label" for="q1a3">
+                        "Musica? Io ascolto solo il telegiornale."
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <h5>Domanda 2: Il tuo rapporto con la tecnologia moderna è:</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2a1" value="a">
+                    <label class="form-check-label" for="q2a1">
+                        "Il mio smartphone ha ancora i tasti."
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2a2" value="b">
+                    <label class="form-check-label" for="q2a2">
+                        "Uso le app, i social, e so cosa sia un NFT (anche se non l'ho capito)."
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2a3" value="c">
+                    <label class="form-check-label" for="q2a3">
+                        "Preferisco un buon libro e una lettera scritta a mano."
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <h5>Domanda 3: Se vedi dei ragazzi fare schiamazzi per strada, la tua reazione è:</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q3" id="q3a1" value="a">
+                    <label class="form-check-label" for="q3a1">
+                        "Chiamo subito i carabinieri! E abbassate quella musica!"
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q3" id="q3a2" value="b">
+                    <label class="form-check-label" for="q3a2">
+                        "Beata gioventù! Mi unisco a loro per un balletto improvvisato."
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q3" id="q3a3" value="c">
+                    <label class="form-check-label" for="q3a3">
+                        "Scuoto la testa e borbotto qualcosa sull'educazione di una volta."
+                    </label>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-submit w-100 mt-3" onclick="calcolaRisultato()">Scopri il
+                Verdetto!</button>
+        </form>
+
+        <div id="risultato" class="mt-4"></div>
+    </div>
+
+    <!-- Bootstrap JS Bundle (include Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function calcolaRisultato() {
+            let punteggio = 0;
+            const form = document.getElementById('quizForm');
+            const risultatoDiv = document.getElementById('risultato');
+
+            const q1 = form.elements['q1'].value;
+            const q2 = form.elements['q2'].value;
+            const q3 = form.elements['q3'].value;
+
+            if (!q1 || !q2 || !q3) {
+                risultatoDiv.innerHTML = "Rispondi a tutte le domande, perbacco!";
+                risultatoDiv.className = 'alert alert-warning';
+                return;
+            }
+
+            // Assegnazione punteggi "scorreggione"
+            if (q1 === 'a') punteggio += 2;
+            if (q1 === 'c') punteggio += 1;
+
+            if (q2 === 'a') punteggio += 2;
+            if (q2 === 'c') punteggio += 1;
+
+            if (q3 === 'a') punteggio += 2;
+            if (q3 === 'c') punteggio += 1;
+
+            let messaggio = "";
+            let classeRisultato = "";
+
+            if (punteggio >= 5) {
+                messaggio = "Congratulazioni! Sei ufficialmente un Vecchio Scorreggione DOC! Il bastone e la dentiera ti aspettano. E non dimenticare la briscola delle 15:00!";
+                classeRisultato = "scorreggione";
+            } else if (punteggio >= 2) {
+                messaggio = "Hmm, ci sei quasi... Qualche sintomo da scorreggione c'è, ma hai ancora un po' di gioventù dentro! Forse sei solo un 'brontolone in addestramento'.";
+                classeRisultato = "forse-scorreggione";
+            } else {
+                messaggio = "Ma che scorreggione e scorreggione! Sei più fresco di una rosa appena sbocciata! Continua così e tieni lontano il bastone della vecchiaia!";
+                classeRisultato = "non-scorreggione";
+            }
+
+            risultatoDiv.innerHTML = \`<strong>Verdetto:</strong> \${messaggio}\`;
+            risultatoDiv.className = classeRisultato; // Rimuove classi precedenti e aggiunge la nuova
+        }
+    </script>
+</body>
+
+</html>
